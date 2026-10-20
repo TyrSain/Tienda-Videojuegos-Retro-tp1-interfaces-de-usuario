@@ -1,16 +1,41 @@
-# React + Vite
+# 🕹️ Tienda de Videojuegos Retro - UNAHUR
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Trabajo Práctico para la materia **Construcción de Interfaces de Usuario** de la Universidad Nacional de Hurlingham.
 
-Currently, two official plugins are available:
+## Descripción del Proyecto
+Aplicación web desarrollada en React que simula una tienda online de videojuegos y consolas retro. Los usuarios pueden explorar un catálogo de productos, filtrar por categorías y precio, consultar detalles, agregar productos al carrito y 
+completar una compra simulada.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Tecnologías Utilizadas
+* **React** (Vite)
+* **React Router DOM** (Navegación entre vistas)
+* **Tailwind CSS / CSS** 
+* **Context API & LocalStorage**  
 
-## React Compiler
+## Instrucciones para instalar y correr el proyecto
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+1. Clonar el repositorio:
+    ```bash
+   git clone https://github.com/TyrSain/Tienda-Videojuegos-Retro-tp1-interfaces-de-usuario.git
+    ```
+2. Entrar a la carpeta del proyecto e instalar dependencias:
+    ```bash
+    cd Tienda-Videojuegos-Retro-tp1-interfaces-de-usuario
+    npm install
+    ```
+3. Levantar el server em modo desarrollo: 
+    ```Bash
+    npm run dev
+    ```
 
-## Expanding the ESLint configuration
+## Integrantes del Grupo
+* Borstner Elea     
+* Iribarren Guido  
+* Marchese Ximena   
+* Nuñez Santiago  
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Capturas de pantalla demostrativas
+//Agregarlas después 
+
+## Deploy
+//agregar link después
