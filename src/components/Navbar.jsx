@@ -15,6 +15,7 @@ function Navbar({cantidadCarrito}) {
 
                 <NavbarBT.Collapse id="basic-navbar-nav">
                     <Nav className="ms-auto">
+                        <Nav.Link as={Link} to={"/Nosotros"}>Nosotros</Nav.Link>
                         <Nav.Link as={Link} to={"/"}>Inicio</Nav.Link>
                         <Nav.Link as={Link} to={"/productos"}>Catálogo</Nav.Link>
                         <Nav.Link as={Link} to={"/carrito"} className='d-flex align-items-center'>

@@ -6,6 +6,7 @@ import Productos from './pages/Productos'
 import DetalleProducto from './pages/DetalleProducto';
 import Carrito from './pages/Carrito';
 import Contacto from './pages/Contacto';
+import Nosotros from './pages/Nosotros';
 import { useState } from "react";
 import { productos } from "./data/productos";
 import ScrollToTop from "./components/ScrollToTop";
@@ -40,6 +41,7 @@ function App() {
         <Route path="/producto/:id" element={<DetalleProducto />}/>
         <Route path="/carrito" element={<Carrito />}/>
         <Route path="/contacto" element={<Contacto />}/>
+        <Route path="/Nosotros" element={<Nosotros />}/>
       </Routes>
       <Footer />
     </BrowserRouter>
