@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom';
 export const Inicio = () => {
   return (
     <div className="text-light min-vh-100 py-4" style={{ backgroundColor: '#1e1f1e', color: '#fff' }}>
-      <h1 className="text-center fw-bold text-light mb-4"> 🎮 Retro gaming </h1>
+      <h1 className="text-center fw-bold text-warning mb-4"> 🎮 Retro gaming </h1>
 
         <Carousel className="mb-5 shadow rounded overflow-hidden">
         <Carousel.Item>
@@ -77,10 +77,10 @@ export const Inicio = () => {
             </p>
 
             <div className='d-flex align-items-center justify-content-center gap-2 mt-3'>
-              <img src="/images/misc/pacman.png" alt="Pacman" style={{ width: '50px', height: '50px', objectFit: 'contain'}} />
+              <img src="/images/misc/pacman-gif.gif" alt="Pacman" style={{ width: '50px', height: '50px', objectFit: 'contain'}} />
               <Button as={Link} to="/productos" variant ="warning" className="fw-bold text-dark px-4 py-2 rounded-pill shadow-sm">Ver catálogo</Button>
-              <img src="/images/misc/blue-pacman-ghost.png" alt="Fantasma" style={{ width: '50px', height: '50px', objectFit: 'contain'}} />
-              <img src="/images/misc/blue-pacman-ghost.png" alt="Fantasma" style={{ width: '50px', height: '50px', objectFit:'contain'}} />
+              <img src="/images/misc/teal-pacman-ghost-gif.gif" alt="Fantasma" style={{ width: '45px', height: '45px', objectFit: 'contain'}} />
+              <img src="/images/misc/yellow-pacman-ghost-gif.gif" alt="Fantasma" style={{ width: '45px', height: '45px', objectFit:'contain'}} />
             </div>
           </Col>
       </Row>
