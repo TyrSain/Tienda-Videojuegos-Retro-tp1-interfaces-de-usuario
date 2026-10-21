@@ -10,6 +10,7 @@ import Nosotros from './pages/Nosotros';
 import { useState } from "react";
 import { productos } from "./data/productos";
 import ScrollToTop from "./components/ScrollToTop";
+import FormularioCompra from "./pages/FormularioCompra";
 
 function App() {
   const [carrito, setCarrito] = useState([]);
@@ -31,6 +32,14 @@ function App() {
 
   const cantidadTotalCarrito = carrito.reduce((total, item) => total + item.cantidad, 0)
 
+  const eliminarDelCarrito = (id) => {
+    setCarrito(carrito.filter(item => item.id !== id))
+  }
+
+  const vaciarCarrito = () => {
+    setCarrito([])
+  }
+
   return (
     <BrowserRouter>
     <ScrollToTop />
@@ -39,9 +48,15 @@ function App() {
         <Route path="/" element={<Inicio />}/>
         <Route path="/productos" element={<Productos onAgregar={agregarAlCarrito} />}/>
         <Route path="/producto/:id" element={<DetalleProducto />}/>
-        <Route path="/carrito" element={<Carrito />}/>
+        <Route path="/carrito" element={<Carrito carrito={carrito} onEliminar={eliminarDelCarrito} onVaciar={vaciarCarrito}/>}/>
         <Route path="/contacto" element={<Contacto />}/>
         <Route path="/Nosotros" element={<Nosotros />}/>
+        <Route path="/compra"   element={<FormularioCompra 
+            carritoVacio={false} // Estamos simulando que el carrito no está vacío para poder mostrar el formulario
+            onConfirmar={() => console.log("Confirmado")} // deberiamos pasarle el carrito y vaciarlo, pero por ahora solo mostramos un mensaje en consola
+          />
+        } 
+      />
       </Routes>
       <Footer />
     </BrowserRouter>
