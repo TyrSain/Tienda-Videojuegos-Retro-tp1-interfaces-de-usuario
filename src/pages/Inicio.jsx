@@ -12,15 +12,15 @@ export const Inicio = () => {
 
         <Carousel className="mb-5 shadow rounded overflow-hidden">
         <Carousel.Item>
-          <img src="/images/CrashBandicoot3Warped.png" alt="Crash Bandicoot 3" style={{ objectFit: 'cover', width: '100%', height: '400px'}}/>
+          <img src="/images/banners/mario.jpg" alt="Crash Bandicoot 3" style={{ objectFit: 'cover', width: '100%', height: '400px'}}/>
         </Carousel.Item>
       
         <Carousel.Item>
-          <img src="/images/SuperMario64.jpg"alt="Super Mario 64"style={{ objectFit: 'cover',width: '100%', height: '400px' }}/>
+          <img src="/images/banners/zelda.jpg"alt="Super Mario 64"style={{ objectFit: 'cover',width: '100%', height: '400px' }}/>
         </Carousel.Item>
   
         <Carousel.Item>
-          <img src="/images/TheLegendofZeldaOcarinaofTime.jpg" alt="Zelda Ocarina of Time"style={{ objectFit: 'cover', width: '100%', height: '400px' }}/>
+          <img src="/images/banners/crash.jpg" alt="Zelda Ocarina of Time"style={{ objectFit: 'cover', width: '100%', height: '400px' }}/>
         </Carousel.Item>
       </Carousel>
       {/*Acá capaz poner más imágenes????*/}
@@ -35,7 +35,6 @@ export const Inicio = () => {
 
       <Row className="align-items-center g-4 my-5">
         <Col md={6}>
-        {/*Esto en un archivo css?*/}
             <div style={{ 
                 position: 'relative', 
                 width: '100%', 
@@ -47,7 +46,7 @@ export const Inicio = () => {
                 alignItems: 'center',
                 justifyContent: 'center'
               }}>
-                <img src="/images/DonkeyKongCountry.jpg" alt="Donkey Kong Country" style={{ 
+                <img src="/images/games/DonkeyKongCountry.jpg" alt="Donkey Kong Country" style={{ 
                   width: '100%', 
                   height: '100%', 
                   objectFit: 'cover'
@@ -78,10 +77,10 @@ export const Inicio = () => {
             </p>
 
             <div className='d-flex align-items-center justify-content-center gap-2 mt-3'>
-              <img src="/images/pacman.png" alt="Pacman" style={{ width: '50px', height: '50px', objectFit: 'contain'}} />
+              <img src="/images/misc/pacman.png" alt="Pacman" style={{ width: '50px', height: '50px', objectFit: 'contain'}} />
               <Button as={Link} to="/productos" variant ="warning" className="fw-bold text-dark px-4 py-2 rounded-pill shadow-sm">Ver catálogo</Button>
-              <img src="/images/blue-pacman-ghost.png" alt="Fantasma" style={{ width: '50px', height: '50px', objectFit: 'contain'}} />
-              <img src="/images/blue-pacman-ghost.png" alt="Fantasma" style={{ width: '50px', height: '50px', objectFit:'contain'}} />
+              <img src="/images/misc/blue-pacman-ghost.png" alt="Fantasma" style={{ width: '50px', height: '50px', objectFit: 'contain'}} />
+              <img src="/images/misc/blue-pacman-ghost.png" alt="Fantasma" style={{ width: '50px', height: '50px', objectFit:'contain'}} />
             </div>
           </Col>
       </Row>
