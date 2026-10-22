@@ -1,6 +1,7 @@
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 function ProductoCard({producto, onAgregar}) {
     const [isHovered, setIsHovered] = useState(false);
@@ -57,12 +58,12 @@ function ProductoCard({producto, onAgregar}) {
                 </div>
 
                 <div className='d-flex gap-2 mt-2'>
-                    <Button 
-                        variant='outline-light' 
-                        size='sm' 
-                        className='flex-fill text-nowrap fw-semibold px-1'
-                    >Ver Detalles
-                    </Button>
+                    <Link 
+                        to={`/producto/${producto.id}`}
+                        className="btn btn-outline-light btn-sm flex-fill text-nowrap fw-semibold px-1"
+                    >
+                        Ver Detalles
+                    </Link>
                     <Button 
                         variant={sinStock ? "secondary" : "warning"} 
                         size='sm' className='flex-fill text-nowrap fw-bold text-dark px-1' 
