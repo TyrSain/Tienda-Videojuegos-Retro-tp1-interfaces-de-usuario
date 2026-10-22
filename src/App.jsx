@@ -40,20 +40,39 @@ function App() {
     setCarrito([])
   }
 
+  const [productosState, setProductosState] = useState(productos)
+
+  const confirmarCompra = () => {
+    const productosActualizados = productosState.map(prod => {
+      const itemEnCarrito = carrito.find(item => item.id === prod.id)
+      if (itemEnCarrito) {
+        return {
+          ...prod,
+          stock: Math.max(0, prod.stock - itemEnCarrito.cantidad)
+        }
+      }
+      return prod
+    })
+
+    setProductosState(productosActualizados)
+
+    vaciarCarrito()
+  }
+
   return (
     <BrowserRouter>
     <ScrollToTop />
       <Navbar cantidadCarrito={cantidadTotalCarrito}/>
       <Routes>
         <Route path="/" element={<Inicio />}/>
-        <Route path="/productos" element={<Productos onAgregar={agregarAlCarrito} />}/>
-        <Route path="/producto/:id" element={<DetalleProducto onAgregar={agregarAlCarrito} />}/>
+        <Route path="/productos" element={<Productos productos={productosState} onAgregar={agregarAlCarrito} />}/>
+        <Route path="/producto/:id" element={<DetalleProducto productos={productosState} onAgregar={agregarAlCarrito} />}/>
         <Route path="/carrito" element={<Carrito carrito={carrito} onEliminar={eliminarDelCarrito} onVaciar={vaciarCarrito}/>}/>
         <Route path="/contacto" element={<Contacto />}/>
         <Route path="/Nosotros" element={<Nosotros />}/>
         <Route path="/compra"   element={<FormularioCompra 
-            carritoVacio={false} // Estamos simulando que el carrito no está vacío para poder mostrar el formulario
-            onConfirmar={() => console.log("Confirmado")} // deberiamos pasarle el carrito y vaciarlo, pero por ahora solo mostramos un mensaje en consola
+            carritoVacio={carrito.length === 0} // Estamos simulando que el carrito no está vacío para poder mostrar el formulario
+            onConfirmar={confirmarCompra} // deberiamos pasarle el carrito y vaciarlo, pero por ahora solo mostramos un mensaje en consola
           />
         } 
       />

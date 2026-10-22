@@ -172,7 +172,7 @@ function DetalleProducto({ onAgregar }) {
 const estilos = {
     fondo: {
         minHeight: "75vh",
-        background: "linear-gradient(180deg, #172334 0%, #101820 100%)",
+        backgroundColor: "#1e1f1e",
         color: "#e8edf5",
         padding: "32px 20px 60px"
     },
@@ -182,7 +182,7 @@ const estilos = {
     },
     volver: {
         display: "inline-block",
-        color: "#b9d8f5",
+        color: "#ffffff",
         textDecoration: "none",
         marginBottom: "24px",
         fontSize: "14px"
@@ -199,14 +199,12 @@ const estilos = {
         gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 320px), 1fr))",
         gap: "36px",
         alignItems: "start",
-        backgroundColor: "#1b2838",
-        border: "1px solid #31445a",
+        backgroundColor: "#212529",
         borderRadius: "10px",
         padding: "clamp(18px, 4vw, 36px)",
         boxShadow: "0 16px 45px rgba(0,0,0,0.25)"
     },
     portada: {
-        background: "radial-gradient(ellipse, #34485e 0%, #172334 75%)",
         borderRadius: "8px",
         padding: "20px",
         minHeight: "350px",
@@ -233,7 +231,7 @@ const estilos = {
         marginBottom: "16px"
     },
     etiqueta: {
-        backgroundColor: "#66c0f4",
+        backgroundColor: "#ff2a6d",
         color: "#10202d",
         padding: "6px 10px",
         borderRadius: "3px",
@@ -278,12 +276,12 @@ const estilos = {
     },
     label: {
         display: "block",
-        color: "#91a4b8",
+        color: "#ffffff",
         fontSize: "12px",
         marginBottom: "5px"
     },
     compra: {
-        backgroundColor: "#111d2a",
+        backgroundColor: "#2f3b4e",
         borderRadius: "7px",
         padding: "20px",
         display: "flex",
@@ -294,7 +292,7 @@ const estilos = {
         border: "1px solid #2c4054"
     },
     precio: {
-        color: "#b8e0b9",
+        color: "#ffffff",
         fontSize: "30px",
         fontWeight: "700"
     },
@@ -330,7 +328,7 @@ const estilos = {
         gap: "15px",
         marginTop: "28px",
         padding: "20px",
-        backgroundColor: "rgba(27,40,56,0.65)",
+        backgroundColor: "#212529",
         borderRadius: "8px",
         color: "#e8edf5",
         fontSize: "14px",

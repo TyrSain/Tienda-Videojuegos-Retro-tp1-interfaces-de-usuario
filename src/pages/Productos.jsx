@@ -7,8 +7,9 @@ import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import ButtonGroup from "react-bootstrap/ButtonGroup";
 
-function Productos({onAgregar}) {
+function Productos({productos, onAgregar}) {
     const [filtro, setFiltro] = useState('todos');
+    
     const productosFiltrados = productos.filter((prod) => {
         if (filtro === 'todos') return true;
         return prod.categoria.toLowerCase() === filtro.toLowerCase();

@@ -74,7 +74,10 @@ export default function FormularioCompra({ carritoVacio, onConfirmar }) {
 
     if (Object.keys(nuevosErrores).length > 0) return;
 
-    if (onConfirmar) onConfirmar(); // Avisamos para que vacíe el carrito, esto se pasa desde App.jsx (REVISAR)
+    if (onConfirmar) {
+      onConfirmar();
+    }
+    
     setConfirmado(true);
     setDatos(estadoInicial);
   };
@@ -110,7 +113,7 @@ export default function FormularioCompra({ carritoVacio, onConfirmar }) {
     );
   }
 
-  //Esto es el formulario en sí
+  // Esto es el formulario en sí
   return (
     <form onSubmit={handleSubmit} noValidate className="card card-body border-0 shadow p-4 bg-dark text-white">
       {/* avisa si el carrito esta vacio (ver carritoVacio en App.jsx) */}

@@ -38,7 +38,7 @@ function Carrito({carrito = [], onEliminar, onVaciar}) {
                             boxShadow: '3px 3px 0px #110a14'
                         }}
                     >
-                        Esplorar Catalogo
+                        Explorar Catalogo
                     </Button>
                 </Container>
             </div>
