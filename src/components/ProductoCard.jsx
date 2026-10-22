@@ -1,10 +1,15 @@
+// IMPORTACIONES:
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
+// COMPONENTE PRINCIPAL:
 function ProductoCard({producto, onAgregar}) {
+    // Estado local para manejar el estado visual de elevacion de la tajerta (hover)
     const [isHovered, setIsHovered] = useState(false);
+
+    // Verificacion de stock disponible
     const sinStock = producto.stock === 0;
 
     return (
@@ -18,6 +23,7 @@ function ProductoCard({producto, onAgregar}) {
                 transform: isHovered ? 'translateY(-6px) scale(1.03)' : 'translateY(0px) scale(1)'
             }}
         >
+            {/* Contenedor de la imagen del producto */}
             <div 
                 style={{
                     height: '220px', 
@@ -36,10 +42,15 @@ function ProductoCard({producto, onAgregar}) {
                     }}
                 />
             </div>
-
+            
+            {/* Cuerpo de la tarjeta */}
             <Card.Body className='d-flex flex-column justify-content-between'>
                 <div>
+
+                    {/* Titulo del producto */}
                     <Card.Title className='text-center fw-bold fs-5 mb-2'>{producto.nombre}</Card.Title>
+
+                    {/* Detalles e info */}
                     <div className='text-center text-muted small mb-3'>
                         {producto.categoria.toLowerCase() !== 'consola' && (
                             <div className='mb-1 text-light fw-bold'>
@@ -56,7 +67,8 @@ function ProductoCard({producto, onAgregar}) {
                         </div>
                     </div>
                 </div>
-
+                
+                {/* Botones de accion: Ver detaller y Agregar al carrito */}
                 <div className='d-flex gap-2 mt-2'>
                     <Link 
                         to={`/producto/${producto.id}`}
@@ -77,4 +89,5 @@ function ProductoCard({producto, onAgregar}) {
     );
 }
 
+// EXPORTACION:
 export default ProductoCard;

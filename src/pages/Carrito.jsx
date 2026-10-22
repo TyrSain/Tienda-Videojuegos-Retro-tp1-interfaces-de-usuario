@@ -1,3 +1,4 @@
+// IMPORTACIONES:
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -6,17 +7,21 @@ import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import CarritoItem from '../components/CarritoItem';
 
-
+// COMPONENTE PRINCIPAL:
 function Carrito({carrito = [], onEliminar, onVaciar}) {
     const navigate = useNavigate();
+
+    // Asegura que el carrito sea siempre un array
     const itemCarrito = Array.isArray(carrito) ? carrito : [];
 
+    // Calculo del precio toal del carrito sumando subtotales
     const total = itemCarrito.reduce((acc, item) =>{
         const precioNum = Number(item.precio) || 0;
         const cantidadNum = Number(item.cantidad) || 0;
         return acc + (precioNum * cantidadNum);
     }, 0);
     
+    // Condicional para el Carrito Vacio
     if (carrito.length === 0) {
         return (
             <div className='text-Light min-vh-100 py-5 text-center'
@@ -24,9 +29,12 @@ function Carrito({carrito = [], onEliminar, onVaciar}) {
                 backgroundColor: '#1e1f1e'
             }}
             >
+                {/* Contenedor para cuando el carrito esta vacio */}
                 <Container className='my-5'>
                     <h2 className='mb-3 fw-bold'>Tu carrito está vacío 🛒</h2>
                     <p className='text-secondary mb-4'>¡Parece que aún no sumaste ningun tesoro retro a tu colección!</p>
+
+                    {/* Boton para volver al catalogo desde el carrito */}
                     <Button
                         as={Link}
                         to='/productos'
@@ -45,6 +53,7 @@ function Carrito({carrito = [], onEliminar, onVaciar}) {
         )
     }
 
+    // El Carrito con productos agregados
     return (
         <div 
             className='text-light min-vh-100 py-4'
@@ -52,6 +61,8 @@ function Carrito({carrito = [], onEliminar, onVaciar}) {
                 backgroundColor: '#1e1f1e'
             }}
         >
+
+            {/* Contenedor para los productos en el carrito */}
             <Container className='my-4'>
                 <div className='text-center mb-5'>
                     <h1 className='text-center bm-5'>Carrito de Compras</h1>
@@ -59,11 +70,15 @@ function Carrito({carrito = [], onEliminar, onVaciar}) {
                 </div>
 
                 <Row>
+
+                    {/* COLUMNA IZQUIERA: Listado de items y boton de vaciar */}
                     <Col lg={8} className='mb-4'>
                         <div className='d-flex justify-content-between align-item-center mb-3'>
                             <h4 className='text-light fw-bold m-0'>
                                 Articulos ({carrito.reduce((acc, item) => acc + item.cantidad, 0)})
                             </h4>
+
+                            {/* Boton para vaciar el Carrito completo */}
                             <Button
                                 variant='outline-danger'
                                 size='sm'
@@ -76,7 +91,8 @@ function Carrito({carrito = [], onEliminar, onVaciar}) {
                                 Vaciar Carrito
                             </Button>
                         </div>
-                            
+                        
+                        {/* Contenedor de las tarjetas de productos del carrito */}
                         <div className='d-flex flex-column gap-3'>
                             {itemCarrito.map((prod) => (
                                 <CarritoItem
@@ -88,6 +104,7 @@ function Carrito({carrito = [], onEliminar, onVaciar}) {
                         </div>
                     </Col>
 
+                    {/* COLUMNA DERECHA: Resumen del Pedido */}
                     <Col lg={4}>
                         <div
                             className='p-4 border border-secondary sticky-top shadow'
@@ -98,19 +115,28 @@ function Carrito({carrito = [], onEliminar, onVaciar}) {
                             }}
                         >
                             <h4 className='fw-bold mb-3 border-bottom border-secondary pb-2'>Resumen del Pedido</h4>
+
+                            {/* Calculo del subtotal de la compra */}
                             <div className='d-flex justify-content-between mb-2 text-secondary'>
                                 <span>Subtotal:</span>
                                 <span>${total}</span>
                             </div>
+
+                            {/* Costo de envio estippulado */}
                             <div className='d-flex justify-content-between mb-3 text-secondary'>
                                 <span>Envio digital / fisico:</span>
                                 <span className='text-success fw-bold'>Gratis</span>
                             </div>
+
                             <hr className='border-secondary' />
+
+                            {/* Monto total final a abonar */}
                             <div className='d-flex justify-content-between mb-4 fs-4 fw-bold text-light'>
                                 <span>Total:</span>
                                 <span className='text-warning'>${total}</span>
                             </div>
+
+                            {/* Boton de redireccion hacia el formulario de pago */}
                             <Button
                                 className='w-100 fw-bold py-2 border-0'
                                 style={{
@@ -130,4 +156,5 @@ function Carrito({carrito = [], onEliminar, onVaciar}) {
     );
 }
 
+// EXPORTACION:
 export default Carrito;

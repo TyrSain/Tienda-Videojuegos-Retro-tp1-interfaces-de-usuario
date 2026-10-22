@@ -1,3 +1,4 @@
+// IMPORTACIONES:
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -5,10 +6,13 @@ import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import { Link } from 'react-router-dom';
 
-export const Nosotros = () => {
+// COMPONENTE PRINCIPAL:
+const Nosotros = () => {
   return (
     <section className="text-light min-vh-100 py-5" style={{ backgroundColor: '#1e1f1e', color: '#fff' }}>
       <Container>
+
+        {/* Introduccion */}
         <div className="text-center mb-5">
           <h1 className="fw-bold ">Sobre Nosotros</h1>
           <h3>En <span className='text-warning'>Retro Gaming</span> vivimos el gaming como vos.</h3>
@@ -17,7 +21,10 @@ export const Nosotros = () => {
           </p>
         </div>
 
+      {/* Tarjetas: Mision y Beneficios */}
       <Row className="g-4 mb-5">
+
+        {/* Tarjeta mision */}
         <Col md={6}>
           <Card className="h-100 shadow-sm" style={{ backgroundColor: '#1e1f1e', borderColor: '#1e1f1e',  color: '#fff' }}>
             <Card.Body>
@@ -30,6 +37,7 @@ export const Nosotros = () => {
           </Card>
         </Col>
 
+        {/* Tarjeta "¿Por qué elegirnos?" */}
         <Col md={6}>
           <Card className="h-100  shadow-sm" style={{ backgroundColor: '#1e1f1e', borderColor: '#1e1f1e', color: '#fff' }}>
             <Card.Body>
@@ -47,6 +55,7 @@ export const Nosotros = () => {
           </Col>
         </Row>
 
+        {/* Llamado a la accion del boton Ver catalogo */}
         <div className="text-center mt-4">
           <p>No solo vendemos productos; compartimos la misma pasión que nuestros clientes. </p>
           <br />
@@ -54,10 +63,11 @@ export const Nosotros = () => {
           <Button as={Link} to="/productos" variant ="warning" className="fw-bold text-dark px-4 py-2 rounded-pill shadow-sm">Ver catálogo</Button>
           <img src="/images/misc/toad-mario.png" alt="Pacman" style={{ width: '50px', height: '50px', objectFit: 'contain', paddingLeft:'10px', paddingTop:'15px'}} />
         </div>
+        
       </Container>
     </section>
-    
   );
 };
 
+// EXPORTACION:
 export default Nosotros;
