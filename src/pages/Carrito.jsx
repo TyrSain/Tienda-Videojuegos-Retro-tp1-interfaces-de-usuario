@@ -3,10 +3,12 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import CarritoItem from '../components/CarritoItem';
 
 
 function Carrito({carrito = [], onEliminar, onVaciar}) {
+    const navigate = useNavigate();
     const itemCarrito = Array.isArray(carrito) ? carrito : [];
 
     const total = itemCarrito.reduce((acc, item) =>{
@@ -117,7 +119,7 @@ function Carrito({carrito = [], onEliminar, onVaciar}) {
                                     borderRadius: '0px',
                                     boxShadow: '3px 3px 0px #110a14'
                                 }}
-                                onClick={() => alert('¡Simulación de compra exitosa! Gracias por tu compra gamer.')}
+                                onClick={() => navigate('/compra')}
                             >Proceder al Pago
                             </Button>
                         </div>
