@@ -12,15 +12,15 @@ export const Inicio = () => {
 
         <Carousel className="mb-5 shadow rounded overflow-hidden">
         <Carousel.Item>
-          <img src="/images/banners/mario.jpg" alt="Crash Bandicoot 3" style={{ objectFit: 'cover', width: '100%', height: '400px'}}/>
+          <img src="/images/banners/mario.jpg" alt="Crash Bandicoot 3" style={{ objectFit: 'contain', width: '100%', height: '400px'}}/>
         </Carousel.Item>
       
         <Carousel.Item>
-          <img src="/images/banners/zelda.jpg"alt="Super Mario 64"style={{ objectFit: 'cover',width: '100%', height: '400px' }}/>
+          <img src="/images/banners/zelda.jpg"alt="Super Mario 64"style={{ objectFit: 'contain',width: '100%', height: '400px' }}/>
         </Carousel.Item>
   
         <Carousel.Item>
-          <img src="/images/banners/crash.jpg" alt="Zelda Ocarina of Time"style={{ objectFit: 'cover', width: '100%', height: '400px' }}/>
+          <img src="/images/banners/crash.jpg" alt="Zelda Ocarina of Time"style={{ objectFit: 'contain', width: '100%', height: '400px' }}/>
         </Carousel.Item>
       </Carousel>
       {/*Acá capaz poner más imágenes????*/}

@@ -19,8 +19,8 @@ function Productos({productos, onAgregar}) {
         <div className='text-light min-vh-100 py-4' style={{backgroundColor: '#1e1f1e', color: '#fff'}}>
             <Container className='my-5'>
                 <div className='text-center mb-4'>
-                    <h1 className='fw-bold text-light'>Catalogo de Videojuegos Retro</h1>
-                    <p className='text-secondary'>Encuentra tu proximo tesoro coleccionable</p>
+                    <h1 className='fw-bold text-light'>Catálogo de Videojuegos Retro</h1>
+                    <p className='text-secondary'>Encuentra tu próximo tesoro coleccionable.</p>
                 </div>
 
                 <div className='d-flex justify-content-center gap-5 mb-5'>
@@ -73,7 +73,7 @@ function Productos({productos, onAgregar}) {
                         ))
                     ) : (
                         <div className='text-center text-secondary py-5 w-100'>
-                            <h4>No hay productos en esta categoria todavia.</h4>
+                            <h4>No hay productos en esta categoría todavia.</h4>
                         </div>
                     )}
                 </Row>

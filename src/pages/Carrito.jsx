@@ -15,7 +15,7 @@ function Carrito({carrito = [], onEliminar, onVaciar}) {
         const precioNum = Number(item.precio) || 0;
         const cantidadNum = Number(item.cantidad) || 0;
         return acc + (precioNum * cantidadNum);
-     }, 0);
+    }, 0);
     
     if (carrito.length === 0) {
         return (
@@ -25,8 +25,8 @@ function Carrito({carrito = [], onEliminar, onVaciar}) {
             }}
             >
                 <Container className='my-5'>
-                    <h2 className='mb-3 fw-bold'>Tu carrito esta vacio 🛒</h2>
-                    <p className='text-secondary mb-4'>¡Parece que aun no sumaste ningun tesoro retro a tu coleccion!</p>
+                    <h2 className='mb-3 fw-bold'>Tu carrito está vacío 🛒</h2>
+                    <p className='text-secondary mb-4'>¡Parece que aún no sumaste ningun tesoro retro a tu colección!</p>
                     <Button
                         as={Link}
                         to='/productos'
@@ -38,7 +38,7 @@ function Carrito({carrito = [], onEliminar, onVaciar}) {
                             boxShadow: '3px 3px 0px #110a14'
                         }}
                     >
-                        Explorar Catalogo
+                        Explorar Catálogo
                     </Button>
                 </Container>
             </div>
@@ -55,7 +55,7 @@ function Carrito({carrito = [], onEliminar, onVaciar}) {
             <Container className='my-4'>
                 <div className='text-center mb-5'>
                     <h1 className='text-center bm-5'>Carrito de Compras</h1>
-                    <p className=''>Aqui se mostraran los videojuegos seleccionados.</p>
+                    <p className=''>Aquí se mostrarán los videojuegos seleccionados.</p>
                 </div>
 
                 <Row>
